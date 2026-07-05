@@ -71,7 +71,7 @@ def block_b():
     # Arm distribution
     fig, ax = plt.subplots(figsize=(4.0, 3.0))
     data = [B[B.arm == "accumulate"].asi, B[B.arm == "fresh"].asi]
-    bp = ax.boxplot(data, labels=["accumulate", "fresh"], patch_artist=True, widths=0.5)
+    bp = ax.boxplot(data, tick_labels=["accumulate", "fresh"], patch_artist=True, widths=0.5)
     for patch, c in zip(bp["boxes"], [C["acc"], C["fresh"]]):
         patch.set_facecolor(c); patch.set_alpha(0.5)
     ax.axhline(TAU, color=C["tau"], ls="--", lw=0.8)
